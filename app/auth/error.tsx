@@ -1,0 +1,3 @@
+export default function AuthError({ error, reset }: { readonly error: Error; readonly reset: () => void }) {
+  return <main role="alert" className="grid min-h-dvh place-content-center justify-items-center gap-3 px-6 text-center"><img className="size-13 object-contain" src="/brand/tier-together-mark.png" alt="" /><h1 className="mt-2 font-display text-3xl font-bold">Discord connection failed</h1><p className="max-w-[48ch] leading-relaxed text-muted">{error.message}</p><button className="mt-2 min-h-11 rounded-lg bg-action px-5 font-bold text-white hover:bg-action-hover disabled:opacity-40" type="button" onClick={reset}>Try again</button></main>;
+}

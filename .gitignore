@@ -1,0 +1,10 @@
+node_modules/
+.ludicord/
+.ludicord-previous-*/
+.ludicord-build-*/
+.env
+.env.*
+!.env.example
+.env.local
+dist/
+*.log

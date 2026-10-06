@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --color-ink: #f5f3ec;
+  --color-muted: #aeb3c1;
+  --color-canvas: #111217;
+  --color-panel: #171922;
+  --color-raised: #20232d;
+  --color-raised-hover: #2a2e3a;
+  --color-field: #202430;
+  --color-field-deep: #191c26;
+  --color-action: #526dff;
+  --color-action-hover: #6c82ff;
+  --color-accent-soft: #aeb9d9;
+  --color-strong: #e1e3ea;
+  --color-success: #bce6ae;
+  --color-success-bg: #203023;
+  --color-success-dot: #77a96b;
+  --color-warning: #f1d59b;
+  --color-warning-dot: #e6a647;
+  --color-danger: #ffbec5;
+  --color-danger-bg: #3a171b;
+  --color-danger-dot: #ef6f78;
+  --color-focus: #9cafee;
+}
+
+@layer base {
+  :root {
+    --ludicord-safe-top: var(--sait, env(safe-area-inset-top, 0px));
+    --ludicord-safe-bottom: var(--saib, env(safe-area-inset-bottom, 0px));
+    --ludicord-safe-left: var(--sail, env(safe-area-inset-left, 0px));
+    --ludicord-safe-right: var(--sair, env(safe-area-inset-right, 0px));
+  }
+
+  * { scrollbar-color: #454b5d #15171e; }
+  ::selection { background: #8da2ff; color: #0d0f14; }
+
+  body {
+    margin: 0;
+    min-width: 0;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    background: #111217;
+    color: #f5f3ec;
+    font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  button, input, select { font: inherit; }
+  button, a, input, select { -webkit-tap-highlight-color: transparent; }
+  :focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
+}
+
+@layer components {
+  .legal-copy { display: grid; gap: 2rem; }
+  .legal-copy section { display: grid; gap: 0.75rem; }
+  .legal-copy h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.45rem, 4vw, 2rem);
+    line-height: 1.15;
+  }
+  .legal-copy p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.975rem;
+    line-height: 1.8;
+  }
+}

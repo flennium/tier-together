@@ -1,0 +1,7 @@
+# Contributing
+
+Tier Together is easiest to change when the product remains small and the server remains authoritative. Before writing code, read [the product notes](PRODUCT.md) and trace the existing path for the behavior you are changing. UI state belongs in React, ranking rules belong in `lib/`, trusted identity and authorization belong on the server, and shared room decisions belong in the WebSocket route. Avoid adding persistence, accounts, new infrastructure, or a second styling system as a side effect of an unrelated feature.
+
+Use Node.js 20.19 or newer and install dependencies with `npm ci`. Create your own ignored `.env.local` from the empty example, then use `npm run dev` for development. Do not commit credentials, generated Ludicord output, logs, or user-created media. Keep changes focused, preserve keyboard and controller operation, and make sure a pointer-only interaction has an equivalent button or selection flow.
+
+Before opening a change, run `npm test`, `npx ludicord routes`, `npx ludicord lint`, `npx tsc --noEmit`, and `npm run build`. Changes that touch Discord SDK behavior, authentication, realtime rooms, responsive layout, or exporting also need a manual pass inside the Discord Activity frame. Describe what changed, how it was verified, and any limitation that remains. Security reports should follow [the security policy](SECURITY.md) instead of being filed publicly.
