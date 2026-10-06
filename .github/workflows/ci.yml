@@ -23,4 +23,4 @@ jobs:
       - run: npm run build
         env:
           LUDICORD_DEPLOYMENT_ENV: production
-          LUDICORD_DISCORD_CLIENT_ID: "123456789012345678"
+          LUDICORD_DISCORD_CLIENT_ID: "1556478676881776730"
